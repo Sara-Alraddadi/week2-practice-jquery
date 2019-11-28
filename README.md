@@ -1,1 +1,1 @@
-# week2-practice-jquery-
+# jquery-practice

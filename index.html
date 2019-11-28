@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("#jquery").hide();
+  $("#choose").hide();
+  $(".buttons").hide();
+  $("#slide").hide();
+  $(".anchor").hide();
+  $("img").hide();
+
+
+  // fade in and out 
+  $('#hi').delay(1500).fadeOut();
+  $('#jquery').delay(2000).fadeIn();
+  $('#jquery').delay(3000).fadeOut();
+  $('#choose').delay(4000).fadeIn();
+  $('.buttons').delay(5000).fadeIn();
+
+
+$(".input").mouseleave(function(){
+    alert("Hello : " + $("#in").val());
+
+           
+  });
+    
+  
+//hide on click
+$("#hide").click(function(){
+    $(this).hide("slow", function(){
+                    alert("I am now hidden");
+           });
+  });
+  
+  
+//slide on double click  
+$(".buttons >button:nth-child(2)").dblclick(function(){
+$("#slide").slideDown();
+});
+
+
+// alert on mouse leave
+$(".bye").mouseleave(function(){
+  $("p").text("Atlest say Goodbye");
+});
+
+// hover 
+$("button[name='hover']").hover(function () {
+        $(this).css("background-color", "white");
+}, function(){
+        $(this).css("background-color", "grey");
+});
+
+//toggle
+$("button[type='button']").click(function() { 
+       $(".minion").toggle(); });
+
+//animation
+$(".buttons>button:last-child").mousedown(function(){
+   $('.buttons').delay(1000).fadeOut();
+
+   var div = $(".minion");
+   for (let i =0 ; i < 10 ; i++){
+  div.animate({left: '-=100px'}, "fast");
+  div.animate({left: '+=100px'}, "fast");}
+  $('.anchor').delay(4500).fadeIn();
+  $('img').delay(4500).fadeIn();
+    $("p").text("I would Love to know you better!!");
+
+
+}); 
+
+
+
+});
+</script>
+
+<body>
+
+<p  id="hi" class="demo">Hi !! I am your teacher today</p>
+<p  id="jquery" class="demo">Lets learn about jquery</p>
+<p  id="choose" class="demo">Choose an event Now!!</p>
+<p id ="slide" class="demo">Hi I slided when you double clicked</p>
+
+<!-- this is minion -->
+
+
+ <div class="minion">
+    <div class="hands">
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="fingers-l"></div>
+      <div class="fingers-r"></div>
+      <div class="glove-l"></div>
+      <div class="glove-r"></div>   
+    </div>
+    <div class="glasses">
+      <div class="glassesline1"></div>
+      <div class="glassesline2"></div>
+      <div class="glass1">
+        <div class="eye1"></div>
+      </div>
+      <div class="glass2">
+        <div class="eye2"></div>
+      </div>
+    </div>
+    <div class="mouth">
+      <ul class="teeth">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <div class="belt-left"></div>
+    <div class="belt-right"></div>
+    <div class="pants"></div>
+    
+    <div class="legs">
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="shoe-l"></div>
+      <div class="shoe-r"></div>
+    </div>
+  </div>
+  
+  <!-- this is my buttons container -->
+  <div class = "buttons">
+	   <button  id="hide">Click me to hide !!</button>
+	   <button >Double click me to slide down !!</button>
+	   <button class ="bye">Dont leave me !!</button>
+	   <button name="hover">Lets HOVER</button>
+	   <button type="button">Lets TOGGLE</button>
+	   <button >Lets DANCE</button>
+   </div>
+ <div class= "anchor">
+<img src="arr.png" "/>
+		  <input id = "in" class="input" type="text" name="name" placeholder="What is your name ?" style="margin: 20px;
+						height : 30%;
+						padding : 20px;
+						border-radius: 20%;
+						background-color: #e2e2e0;
+						font-size : 20px;">
+</div>   
+	      
+
+
+     
+</body>
+</html>
